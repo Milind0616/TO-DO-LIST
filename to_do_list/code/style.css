@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(90deg, #1a0563, #015a4d, #e6d81e);
+    background-color: transparent;
+    padding: 10px;
+}
+
+.to_do_list {
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.to_do_list h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.to_do_list img {
+    width: 30px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 15px;  
+}
+
+
+
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #f77205fd;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 9px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(uncheck.png.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+
+
+ul li::before {
+    background-image: url(images/uncheck.png);
+    top: 15px; 
+    left: 10px;
+}
+
+ul li.checked::before {
+    background-image: url(images/check.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+span.close {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+li.checked {
+    text-decoration: line-through;
+    color: grey;
+}
+
+
+ul li span:hover{
+    background: #edeef0;
+}
+
+@media (max-width: 600px) {
+    .to_do_list {
+        padding: 20px;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+
+    ul li {
+        font-size: 15px;
+        padding: 10px 7px 10px 40px;
+    }
+}
+
+button:focus, input:focus, ul li:focus {
+    outline: 2px solid #015a4d; /* Provide visual feedback when elements are focused */
+}
